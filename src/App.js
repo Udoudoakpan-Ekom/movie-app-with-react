@@ -15,6 +15,7 @@ const movie1 = {
 };
 
 const App = () => {
+  /*--- We can have as many useState as possible */
   const [movies, setMovies] = useState([]);
   const [searchTerm, setsearchTerm] = useState("");
 
@@ -40,9 +41,11 @@ const App = () => {
         <img
           src={SearchIcon}
           alt="search"
+          /* -- onclick event so that the search button and work -- */
           onClick={() => searchMovies(searchTerm)}
         />
       </div>
+      {/* -- To collect all the movies using map METHOD */}
       {movies?.length > 0 ? (
         <div className="container">
           {movies.map((movie) => (
@@ -50,6 +53,7 @@ const App = () => {
           ))}
         </div>
       ) : (
+        /* ---Where the name of the movies isn't found in the array---  */
         <div className="empty">
           <h2>No movies found</h2>
         </div>
